@@ -26,8 +26,8 @@
             "background": "#2a2a2a",
             "foreground": "#fafafa",
             "properties": {
-              "folder_icon": "\uf6d7",
-              "folder_separator_icon": "<transparent> \uea7c </>",
+              "folder_icon": "\uea7c",
+              "folder_separator_icon": "<transparent> \ue0bd </>",
               "home_icon": "\udb80\udedc",
               "style": "agnoster_short"
             },
