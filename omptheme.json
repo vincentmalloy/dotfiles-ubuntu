@@ -27,7 +27,7 @@
             "foreground": "#fafafa",
             "properties": {
               "folder_icon": "\uf6d7",
-              "folder_separator_icon": "<transparent> \ue0bd </>",
+              "folder_separator_icon": "<transparent> \uea7c </>",
               "home_icon": "\udb80\udedc",
               "style": "agnoster_short"
             },
