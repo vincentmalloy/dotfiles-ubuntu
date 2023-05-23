@@ -29,7 +29,10 @@
               "folder_icon": "\uea7c",
               "folder_separator_icon": "<transparent> \ue0bd </>",
               "home_icon": "\udb80\udedc",
-              "style": "agnoster_short"
+              "style": "agnoster_short",
+              "mapped_locations": {
+                "~/sites/*": "\uf0e8"
+              }
             },
             "style": "plain",
             "template": " {{ .Path }} ",
