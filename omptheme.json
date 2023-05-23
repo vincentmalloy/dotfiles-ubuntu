@@ -131,7 +131,7 @@
     "transient_prompt": {
         "background": "transparent",
         "foreground": "#ffffff",
-        "template": "\u276f "
+        "template": "\udb80\uddd9 "
     },
     "console_title_template": "{{if .Root}} \u26a1 {{end}}{{.Folder | replace \"~\" \"🏚\" }} @ {{.HostName}}",
     "version": 2
