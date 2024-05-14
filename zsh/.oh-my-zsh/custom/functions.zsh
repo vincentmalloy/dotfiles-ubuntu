@@ -8,6 +8,13 @@ g() {
     git status -sb
   fi
 }
+gg() {
+  if [[ $# -gt 0 ]]; then
+    git add .;git commit -m "$@";git push
+  else
+    git add .;git commit -m "update";git push
+  fi
+}
 # From Dan Ryan's blog - http://danryan.co/using-antigen-for-zsh.html
 man () {
   # Shows pretty `man` page.

@@ -72,7 +72,7 @@ fi
 # install oh-my-posh
 if ! command -v oh-my-posh >/dev/null 2>&1; then
   log_task "Installing oh-my-posh"
-  curl -s https://ohmyposh.dev/install.sh | bash -s
+  curl -s https://ohmyposh.dev/install.sh | sudo bash -s
   log_task "Installing nerd Font"
   oh-my-posh font install RobotoMono
 fi
@@ -104,7 +104,8 @@ fi
 # install helix
 if ! command -v hx >/dev/null 2>&1; then
   log_task "Installing helix"
-  apt_update
+  sudo add-apt-repository ppa:maveonair/helix-editor
+  sudo apt update
   sudo apt install helix --yes
 fi
 # install oh-my-zsh
@@ -144,4 +145,4 @@ if [ ! -f "./git/.gitconfig.local" ]; then
   envsubst < gitconfig.local.template > git/.gitconfig.local
 fi
 # stow actual dotfiles
-xstow --restow */
+xstow --restow */ -f
