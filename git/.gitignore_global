@@ -1,0 +1,15 @@
+.vscode/*
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+# php cs fixer cache
+.php-cs-fixer.cache
+
+# local notes, not for committing
+simons_notes*
+
+# direnv local file
+.envrc

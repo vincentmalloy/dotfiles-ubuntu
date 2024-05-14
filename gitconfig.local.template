@@ -1,0 +1,5 @@
+[user]
+        email = $email
+        name = $name
+[init]
+        templateDir = $HOME/.git_template

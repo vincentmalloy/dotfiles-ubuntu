@@ -27,16 +27,27 @@
             "foreground": "#fafafa",
             "properties": {
               "folder_icon": "\uea7c",
-              "folder_separator_icon": "<transparent> \ue0bd </>",
+              "folder_separator_icon": " <transparent>\ue0bd</>",
               "home_icon": "\udb80\udedc",
               "style": "agnoster_short",
               "mapped_locations": {
-                "~/sites/*": "\uf0e8"
+                "~/projects/sites/*": "\uf0e8 "
               }
             },
             "style": "plain",
             "template": " {{ .Path }} ",
             "type": "path"
+          },
+          {
+            "background": "#910000",
+            "foreground": "#fafafa",
+            "background_templates": [
+              "{{ if .Env.PROJECT_URL }}#4caf50{{ end }}"
+            ],
+            "style": "diamond",
+            "leading_diamond": "<parentBackground,background>\ue0b0</>",
+            "type": "text",
+            "template": "{{ if glob \".ddev/config.yaml\" }}{{ if .Env.PROJECT_URL }} \ueb7b {{ else }} \ueba9 {{ end }}{{ end }}"
           },
           {
             "background": "#00C853",
@@ -53,7 +64,7 @@
               "fetch_status": true
             },
             "style": "diamond",
-            "template": " {{ .HEAD }}{{ if .Staging.Changed }}<#FF6F00> \uf046 {{ .Staging.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
+            "template": " {{ .UpstreamIcon }}{{ trunc 30 .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ",
             "type": "git"
           },
           {
@@ -62,7 +73,7 @@
             "leading_diamond": "<parentBackground,background>\ue0b0</>",
             "properties": {
               "style": "dallas",
-              "threshold": 0
+              "threshold": 500
             },
             "style": "diamond",
             "template": " {{ .FormattedMs }}s ",
@@ -104,6 +115,23 @@
             "style": "diamond",
             "template": " {{ .CurrentDate | date .Format }} ",
             "type": "time"
+          },
+          {
+            "background": "#2a2a2a",
+            "foreground": "#fafafa",
+            "properties": {
+              "discharging_icon": "󱟞",
+              "charging_icon": "󱟠",
+              "charged_icon": "󱟢"
+            },
+            "background_templates": [
+              "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
+              "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
+              "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
+            ],
+            "template": " {{ if not .Error }}{{ .Icon }}{{ if lt .Percentage 90  }}{{ .Percentage }} {{ end }}{{ end }} ",
+            "style": "diamond",
+            "type": "battery"
           }
         ],
         "type": "prompt"
