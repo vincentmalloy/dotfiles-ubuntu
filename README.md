@@ -3,5 +3,5 @@
 ## Installation
 
 ```bash
-sh -c "$(wget -qO- https://raw.githubusercontent.com/vincentmalloy/dotfiles/main/install.sh)"
+sh -c "$(wget -qO- https://raw.githubusercontent.com/vincentmalloy/dotfiles-ubuntu/main/install.sh)"
 ```
