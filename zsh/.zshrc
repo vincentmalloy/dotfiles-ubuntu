@@ -19,7 +19,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # init oh-my-posh
-eval "$(oh-my-posh init zsh --config https://gist.githubusercontent.com/vincentmalloy/4b85151d28b3025451f5634b6081019d/raw/omptheme.json)"
+eval "$(oh-my-posh init zsh --config ~/.dotfiles/omptheme/omptheme.json)"
 eval $(thefuck --alias fuck)
 
 # dir colors
