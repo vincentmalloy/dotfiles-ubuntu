@@ -87,7 +87,7 @@ if [ -d "${DOTFILES_DIR}" ]; then
   git_clean "${DOTFILES_DIR}" "${DOTFILES_REPO}" "${DOTFILES_BRANCH}"
 else
   log_task "Cloning '${DOTFILES_REPO}' at branch '${DOTFILES_BRANCH}' to '${DOTFILES_DIR}'"
-  git clone --branch "${DOTFILES_BRANCH}" "${DOTFILES_REPO}" "${DOTFILES_DIR}"
+  git clone --recurse-submodules --branch "${DOTFILES_BRANCH}" "${DOTFILES_REPO}" "${DOTFILES_DIR}"
 fi
 
 if [ -f "${DOTFILES_DIR}/setup.zsh" ]; then
